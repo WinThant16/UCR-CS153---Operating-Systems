@@ -1,0 +1,20 @@
+{
+    "configurations": [
+    {
+        "type": "by-gdb",
+        "request": "launch",
+        "name": "Launch(remote)",
+        "program": "${workspaceRoot}/kernel",
+        "cwd": "${workspaceRoot}",
+        "remote": {
+            "enabled": true,
+            "address": ":26000",
+            "mode": "remote",
+            "execfile": "${workspaceRoot}/kernel"
+        },
+        "preLaunchTask": "xv6build",
+        "postDebugTask": "stopxv6",
+        "internalConsoleOptions": "neverOpen"
+    }
+    ]
+}

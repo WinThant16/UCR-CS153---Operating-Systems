@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Auto grade",
+      "setup": "sudo apt-get update >/dev/null 2>&1 && sudo apt-get install -y qemu-system-i386 >/dev/null 2>&1 && pip3 install pwntools >/dev/null 2>&1 && wget -q https://ucr-cs153.github.io/lab3.py >/dev/null 2>&1",
+      "run": "python3 lab3.py",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
