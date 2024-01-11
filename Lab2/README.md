@@ -1,3 +1,68 @@
+Lab 2: Scheduler
+====================
+--------------------
+1. Getting Started
+--------------------
+
+Download a new directory of starter code of XV6 for Lab2 from this
+`link <https://github.com/mit-pdos/xv6-public>`_.
+
+To get started, look at the file ``proc.c``.
+
+--------------------
+2. Assignment (95%)
+--------------------
+
+In this part of the assignment, you will change the scheduler from
+a simple round-robin to a priority scheduler.  Add a priority value to
+each process (lets say taking a range between 0 to 31).  The range
+does not matter, it is just a proof of concept.  When scheduling from
+the ready list you will always schedule the highest priority
+thread/process first.  All the processes should have a default initial
+priority of 10.
+
+Add a system call to change the priority of a process.  A process can
+change its priority at any time.  If the priority becomes lower than
+any process on the ready list, you must switch to that process.
+
+**Goals**: Understand how the scheduler works.  Understand how
+to implement a scheduling policy and characterize its impact on
+performance.  Understand priority inversion and a possible solution
+for it.
+
+----------------------------
+3. Bonus Section (upto 10%)
+----------------------------
+
+Implement up to two of the next three items.  Each is a 5% bonus.
+To get credit for a bonus part, you must also develop a user test that
+will illustrate it.
+
+* To avoid starvation, implement aging of priority.  If a process
+  waits increase its priority.  When it runs, decrease it.
+  (Possible Bonus 1)
+
+  |ep|
+
+* Implement priority donation/priority inheritance. (Possible Bonus 2)
+
+  |ep|
+
+* Add fields to track the scheduling performance of each process.
+  These values should allow you to compute the turnaround time and
+  wait time for each process.  Add a system call to extract these
+  values or alternatively print them out when the process exits.
+  (Possible Bonus 3)
+
+--------------------------------------
+4. Questions to Explore
+--------------------------------------
+
+* Explain how the current scheduler works, including interaction with
+  the timer.
+
+--------------------------------------
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/YIyVslbD)
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=12667958)
 
